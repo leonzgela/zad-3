@@ -1,15 +1,19 @@
-﻿using System;
+using System;
 
 class Program
 {
     static void Main()
     {
-        int a = 100;
-        int b = 3;
+        int x = int.Parse(Console.ReadLine());
+        int y = int.Parse(Console.ReadLine());
+        int z = int.Parse(Console.ReadLine());
 
-        int x = a / b; 
-        int y = a % b; 
+        bool jePravokutni = (x > 0 && y > 0 && z > 0) && 
+                            (x * x + y * y == z * z || x * x + z * z == y * y || y * y + z * z == x * x);
 
-        Console.WriteLine($"a dijeljeno s b je {x} i ostatak {y}");
+        if (jePravokutni)
+            Console.WriteLine("Jest pravokutni trokut.");
+        else
+            Console.WriteLine("Nije pravokutni trokut (ili vrijednosti nisu veće od 0).");
     }
 }
